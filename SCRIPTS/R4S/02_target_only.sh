@@ -8,6 +8,8 @@ sed -i 's,-mcpu=generic,-march=armv8-a+crc+crypto,g' include/target.mk
 #增加风扇调速（被动散热不香么？
 wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/etc/init.d/fa-rk3399-pwmfan
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/usr/bin/start-rk3399-pwm-fan.sh
+/etc/init.d/fa-rk3399-pwmfan enable
+/etc/init.d/fa-rk3399-pwmfan reload
 
 #Vermagic
 latest_version="$(curl -s https://github.com/openwrt/openwrt/tags | grep -Eo "v[0-9\.]+\-*r*c*[0-9]*.tar.gz" | sed -n '/[2-9][3-9]/p' | sed -n 1p | sed 's/v//g' | sed 's/.tar.gz//g')"
