@@ -40,6 +40,8 @@ linkease_repo="https://github.com/linkease/openwrt-app-actions"
 linkease_pkg_repo="https://github.com/jjm2473/packages"
 linkease_luci_repo="https://github.com/jjm2473/luci"
 sirpdboy_repo="https://github.com/sirpdboy/sirpdboy-package"
+sbwdaednext_repo="https://github.com/sbwml/luci-app-daed-next"
+lucidaednext_repo="https://github.com/QiuSimons/luci-app-daed-next"
 
 # 开始克隆仓库，并行执行
 clone_repo $openwrt_repo $latest_release openwrt &
@@ -70,12 +72,14 @@ clone_repo $dockerman_repo master dockerman &
 clone_repo $diskman_repo master diskman &
 clone_repo $docker_lib_repo master docker_lib &
 clone_repo $mosdns_repo master mosdns &
-clone_repo $ssrp_repo master ssrp &
+clone_repo $ssrp_repo main ssrp &
 clone_repo $zxlhhyccc_repo master zxlhhyccc &
 clone_repo $linkease_repo main linkease &
 clone_repo $linkease_pkg_repo istoreos-21.02 linkease_pkg &
 clone_repo $linkease_luci_repo istoreos-21.02 linkease_luci &
 clone_repo $sirpdboy_repo main sirpdboy &
+clone_repo $sbwdaednext_repo main sbwdaednext &
+clone_repo $lucidaednext_repo rebase lucidaednext &
 
 # 等待所有后台任务完成
 wait
